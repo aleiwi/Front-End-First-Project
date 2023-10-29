@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Abdul Razzaq - Personal Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://img.freepik.com/free-vector/wave-background-abstract-gradient-design_483537-3688.jpg?w=1060&t=st=1698518040~exp=1698518640~hmac=6875ed4f9ac356abc9cf4e861a8598e17647db6559ea449b5a0b1019fc51ff0e");
+            background-size: cover;
+            color: #ffd700; 
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 99%;
+            z-index: 9999;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-left: -20px;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+
+        nav ul li:first-child {
+            margin-left: auto;
+            font-weight: bold;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 40px;
+            background-color: transparent;
+        }
+
+        .intro-text h1 {
+            margin-top: 170px;
+            color: #fff;
+            font-size: 36px;
+        }
+
+        .intro-text p {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            border: 2px solid #fff;
+        }
+
+        .profile-info {
+            text-align: left;
+            color: #fff;
+            direction: ltr;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-button {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .contact-button:hover {
+            background-color: #333;
+            color: #ffcc00;
+        }
+
+        .github-icon,
+        .language-progress {
+            font-size: 36px;
+            color: #ffd700; 
+        }
+
+        .languages {
+            margin-top: 90px;
+            margin-bottom: 90px;
+        }
+
+        .github-icon a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .language-progress {
+            margin-top: 10px;
+        }
+
+        .progress {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-label {
+            width: 150px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .progress-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .progress-bar-container {
+            background-color: #666;
+            border-radius: 5px;
+            flex-grow: 1;
+            margin: 0 10px;
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #ffcc00;
+            height: 100%;
+            border-radius: 5px;
+            width: 0;
+        }
+
+        .progress-value ,.about_me{
+            color: #ffcc00;
+        }
+      
+
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        #contact-form {
+            margin-bottom: 90px;
+        }
+
+        #contact-form input[type="text"],
+        #contact-form input[type="email"],
+        #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        #contact-form input[type="submit"] {
+            background-color: #ffd700; 
+            color: #333;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #contact-form input[type="submit"]:hover {
+            background-color: #333;
+            color: #ffd700; 
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 75px;
+            overflow: hidden;
+            transition: height 0.5s;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #ffd700; 
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer i {
+            font-size: 24px;
+            vertical-align: middle;
+        }
+
+        #footer-toggle {
+            display: none; 
+        }
+
+        #footer-toggle:checked + .footer {
+            height: auto; 
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const footer = document.querySelector('.footer');
+            const body = document.querySelector('body');
+
+            function adjustFooter() {
+                footer.style.position = body.offsetHeight < window.innerHeight ? 'fixed' : 'static';
+                footer.style.bottom = body.offsetHeight < window.innerHeight ? '0' : 'auto';
+            }
+
+            window.addEventListener('resize', adjustFooter);
+            window.addEventListener('scroll', adjustFooter);
+
+            adjustFooter();
+        });
+    </script>
+
+</head>
+
+<body>
+    <nav>
+        <a href="#cont">ABDULRAZAK ALEIWI</a>
+        <ul>
+            <li><a href="#cont">Home</a></li>
+            <li><a href="#about-m">About Me</a></li>
+            <li><a href="#contact-form">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="cont">
+        <div class="intro-text">
+            <h1 id=>Hi, I'm Abdulrazak</h1>
+            <p id="about-m">Welcome To My Page.</p>
+        </div>
+
+        <div class="profile">
+            <img
+                src="https://drive.google.com/uc?export=view&id=1dhaYQmLYz87ZBnHbO0ia4PW1rl3CXNBb"
+                alt="Abdulrazak's Profile Picture"
+            />
+            <div class="profile-info">
+                <h2 class="about_me">About Me</h2>
+                <p>
+                    Hello, my name is Abdulrazak Aleiwi. I studing computer engineering at Suleyman Demirel University.
+                    I am in my third year. In the meantime, I am trying to develop my experience in the following
+                    programming languages: C, Java, Python, JavaScript, HTML, and CSS in general, and in web development in
+                    particular.
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-buttons">
+            <a class="contact-button" href="#contact-form">Contact Me</a>
+            <div class="github-icon">
+                <a href="https://github.com/aleiwi" target="_blank">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="languages">
+            <!-- Java -->
+            <div class="progress">
+                <div class="progress-label">
+                    Java
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <div class="progress-value">80%</div>
+            </div>
+
+            <!-- C Language -->
+            <div class="progress">
+                <div class="progress-label">
+                    C
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <div class="progress-value">70%</div>
+            </div>
+
+            <!-- Python -->
+            <div class="progress">
+                <div class="progress-label">
+                    Python
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="progress-value">60%</div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="progress">
+                <div class="progress-label">
+                    JavaScript
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 40%;"></div>
+                </div>
+                <div class="progress-value">40%</div>
+            </div>
+
+            <!-- HTML -->
+            <div class="progress">
+                <div class="progress-label">
+                    HTML
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <div class="progress-value">90%</div>
+            </div>
+
+            <!-- CSS -->
+            <div class="progress">
+                <div class="progress-label">
+                    CSS
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <div class="progress-value">80%</div>
+            </div>
+        </div>
+
+        <div id="contact-form">
+            <h2>Contact Me</h2>
+            <form method="get">
+                <input type="text" id="name" name="name" placeholder="Name"><br><br>
+
+                <input type="email" id="email" name="email" placeholder="Email"><br><br>
+
+                <textarea id="message" name="message" rows="4" cols="50" placeholder="Comment..."></textarea><br><br>
+
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Designed By Abdulrazak Aleiwi ©2023</p>
+        <a href="https://github.com/aleiwi" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="mailto:aleiwi9@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+        <a href="https://www.instagram.com/msa_7e/" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
+
+</body>
+
+</html>
